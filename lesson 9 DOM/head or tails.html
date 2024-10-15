@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Coin-Flip Simple</title>
+    </head>
+    <body>
+        <button onclick="
+            guess = 'heads';
+            playGame(guess);
+        ">heads</button>
+        <button onclick="
+            guess = 'tails';
+            playGame(guess);
+        ">tails</button>
+
+        <p class="moveChoose"></p>
+        <p class="comChoose"></p>
+        <p class="scoreBoard"></p>
+
+        <button onclick="
+            score.wins = 0;
+            score.losses = 0;
+            localStorage.setItem('score', JSON.stringify(score));
+            console.log('Score reset :', score);
+            updateScoreBoard();
+        ">reset score</button>
+        <script>
+            let guess;
+            
+            // let result = '';
+            // let guess =  'heads';
+            // if (randomNumber < 0.5) {
+            //     result = 'heads';
+            // } else {
+            //     result = 'tails';
+            // }
+
+            // if (guess === result) {
+            //     console.log('you win!');
+            // } else {
+            //     console.log('you lose!');
+            // }
+
+            //Ternary options
+            
+            const score = JSON.parse(localStorage.getItem('score')) || {
+                wins : 0,
+                losses : 0
+            };
+            
+            function playGame(guess){
+                let randomNumber = Math.random();
+                let result = randomNumber <0.5? 'heads' : 'tails';
+                const outcome = guess === result? 'You win!' : 'You lose!';
+                console.log(outcome);
+
+                if (guess === result)
+                {
+                    score.wins++;
+                } else {
+                    score.losses++;
+                }
+
+                console.log(score);
+
+                localStorage.setItem('score', JSON.stringify(score));
+                updateChoose(guess);
+                updateComCHoose(result);
+                updateScoreBoard();
+            }
+
+            function updateChoose(guess){
+                document.querySelector('.moveChoose').innerHTML = `you choose ${guess}`;
+            }
+
+            function updateScoreBoard(){
+                document.querySelector('.scoreBoard').innerHTML = `wins : ${score.wins}, losses : ${score.losses}`;
+            }
+
+            function updateComCHoose(result){
+                document.querySelector('.comChoose').innerHTML = `computer choose ${result}`;
+            }
+        </script>
+    </body>
+</html>

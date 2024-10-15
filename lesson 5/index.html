@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Variable Exercise</title>
+    </head>
+    <body>
+        <p>Ireng Chicken Orders</p>
+        <button onclick="
+            console.log(`Chicken quantity : ${chickenQuantity}`)
+        ">Show Chickens</button>
+        <button onclick="chickenQuantity++;
+            console.log(`Chicken quantity : ${chickenQuantity}`)
+        ">Add one Chicken</button>
+        <button onclick="if(chickenQuantity < 10) {chickenQuantity += 2} 
+            else {console.log('Bucket is full!')};
+            console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">+2 Chickens</button>
+       <button onclick="chickenQuantity += 3;
+            console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">+3 Chickens</button>
+        <button onclick="chickenQuantity += 4;
+               console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">+4 Chickens</button>
+         <button onclick="chickenQuantity += 5;
+                 console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">+5 Chickens</button>
+         <button onclick="if(chickenQuantity > 0) {chickenQuantity--;} else {
+            console.log('Bucket is Empty');
+         } 
+            console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">Remove Chicken</button>
+         <button onclick="chickenQuantity -= 2;
+            console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">-2 Chickens</button>
+         <button onclick="chickenQuantity -= 3;
+             console.log(`Chicken quantity : ${chickenQuantity}`);
+        ">-3 Chickens</button>
+        <button onclick="chickenQuantity=0;
+            console.log(`Chicken reset to zero!
+            Chicken quantity : ${chickenQuantity}`)
+        ">Reset chicken</button>
+
+        <script>
+            let chickenQuantity = 0;
+        </script>
+    </body>
+</html>

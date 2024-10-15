@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>lesson 7.3</title>
+    </head>
+    <body>
+        <script>
+            function convertLength(length, from, to){
+                let feet;
+                switch(from){
+                    case 'km':
+                        feet = length*3281;
+                        break;
+                    case 'mile':
+                        feet = length*5280;
+                        break;
+                    case 'feet':
+                        feet = length;
+                        break;
+                    default: 
+                        return "Invalid input unit."
+                }
+
+                let result;
+                switch(to){
+                    case 'km':
+                        result = feet/3281;
+                        break
+                    case 'mile':
+                        result = feet/5280;
+                        break;
+                    case 'feet':
+                        result = feet;
+                        break;
+                    default: 
+                        return "invalid output unit.";
+
+                }
+
+                return `${length} ${from} is equal to ${result} ${to}`;
+            }
+
+            console.log(convertLength(100,'km','feet'));
+            console.log(convertLength(100,'feet','km'));
+            console.log(convertLength(100,'kg','feet'));
+            console.log(convertLength(100,'km','dick'));
+        </script>
+    </body>
+</html>

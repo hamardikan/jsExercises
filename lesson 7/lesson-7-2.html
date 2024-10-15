@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>lesson 7.2</title>
+    </head>
+    <body>
+        <script>
+            function convertCtoF(celsius){
+                fahrenheit = ((celsius*9/5) + 32);
+                return(fahrenheit);
+            }
+
+            function convertFtoC(fahrenheit){
+                celsius = (fahrenheit - 32)*5/9;
+                return(celsius);
+            }
+
+            function convertT(degrees, unit){
+                if (unit === 'C'){
+                    celsius = degrees;
+                    fahrenheit = ((celsius*9/5) + 32);
+                    return(`${fahrenheit}F`);
+                } else if (unit === 'F'){
+                    fahrenheit = degrees;
+                    celsius = (fahrenheit - 32)*5/9;
+                    return(`${celsius}C`);
+                }
+            }
+
+
+            console.log(convertCtoF(25));
+            console.log(convertFtoC(86));
+            console.log(convertT(25,'C'));
+            console.log(convertT(86,'F'));
+        </script>
+    </body>
+</html>

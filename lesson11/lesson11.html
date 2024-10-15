@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>lesson 11 </head>
+    <script>
+        const myArray = [10, 20, 30];
+        console.log(myArray);
+        console.log(myArray[1]);
+        myArray[2] = 99;
+        console.log(myArray);
+
+        function getLastValue(array) {
+            const lastIndex = array.length - 1;
+            return array[lastIndex];
+        }
+
+        console.log(getLastValue([1, 20, 22, 24, 5]));
+
+        function arraySwap(array){
+            const lastIndex = array.length - 1;
+            const firstIndex = 0;
+            const lastValue = array[lastIndex];
+            const firstValue = array[firstIndex];
+            
+            array[firstIndex] = lastValue;
+            array[lastIndex] = firstValue;
+
+            return array;
+        }
+
+        console.log(arraySwap(myArray));
+
+        [1, 'hello', true, { name: 'socks'}, [1, 2]]
+
+        console.log(typeof [1,2]);
+
+        myArray.push(420);
+        console.log(myArray); //add new array element
+
+        myArray.splice(0,2); //delete array, start from what element , how many
+        console.log(myArray);
+    </script>
+</html>

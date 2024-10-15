@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>latihan</title>
+    </head>
+    <body>
+        <button>9a</button>
+        <button class="secondButton">9b</button>
+
+        <p></p>
+
+        <input class="name-input" placeholder="Your name..."
+            onkeydown="pressEnter();"
+        >
+        <button class="submit" onclick="
+            updateName();
+        ">Submit</button>
+        <p class="yourName">Your name is :</p>
+
+        <script>
+            console.log(document.querySelector('button'));
+            document.querySelector('.secondButton')
+            .innerHTML = '9b done!';
+
+            function updateName() {
+                const name = document.querySelector('.name-input').value;
+                document.querySelector('.yourName').innerHTML = `Your name is : ${name}`;
+            }
+
+            function pressEnter() {
+                if(event.key === 'Enter') {
+                updateName();
+            }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .amazon .button {
+                background-color: rgb(255,216, 20);
+                padding: 5px 25px;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .uber .button {
+                border: none;
+                cursor: pointer;
+                padding: 9px 45px;
+                font-weight: bold;
+                border-radius: 12px;
+            }
+
+            .one {
+                background-color: black;
+                color: white;
+            }
+
+            .amazon .button.addedo  o {
+                background-color: black;
+                color: white;
+            }
+
+            .requested {
+                background-color: rgb(38, 71, 190);
+                color: white;
+            }
+
+            .scheduled {
+                background-color: rgb(255, 177, 20);
+                color: white;
+            }
+
+            .toggleTest {
+                display: flex;
+                padding: 5px;
+            }
+
+            .buttonToToggle {
+                background-color: lightgray;
+                border: none;
+                margin: 5px;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .toggleOn {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    
+    <body>
+
+        <div class="amazon">
+            <button class="button" onclick="
+                toggleButton(this, 'Added', 'Add to Cart');">
+                Add to Cart
+            </button>
+        </div>
+        <p></p>
+        <div class="uber">
+            <button class="button one" onclick="
+                toggleButton(this, 'Requested', 'Request now');">
+                Request now
+            </button>
+            <button class="button two" onclick="
+                toggleButton(this, 'Scheduled', 'Schedule for later');
+            ">
+                Schedule for later
+            </button>
+        </div>
+
+        <div class ="toggleTest">
+            <button class="buttonToToggle"  onclick="toggleButton2(this);">Gaming</button>
+            <button class="buttonToToggle"  onclick="toggleButton2(this);">Music</button>
+            <button class="buttonToToggle"  onclick="toggleButton2(this);">Tech</button>
+        </div>
+
+        <script>
+            function toggleButton (button, activeText, originalText) {
+                const newClass = activeText.toLowerCase();
+
+                if (button.classList.contains(newClass)){
+                    button.textContent = originalText;
+                    button.classList.remove(newClass);
+                } else {
+                    button.textContent = activeText;
+                    button.classList.add(newClass);
+                }
+            }
+
+            function toggleButton2 (clickedButton) {
+                const toggledButton = document.querySelectorAll('.buttonToToggle');
+                
+                toggledButton.forEach(button => {
+                    button.classList.remove('toggleOn');
+                });
+
+                clickedButton.classList.add('toggleOn');
+            }
+
+
+        </script>
+    </body>
+</html>

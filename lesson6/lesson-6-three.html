@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Coin-Flip Simple</title>
+    </head>
+    <body>
+        <script>
+            let randomNumber = Math.random();
+            // let result = '';
+            let guess =  'heads';
+            // if (randomNumber < 0.5) {
+            //     result = 'heads';
+            // } else {
+            //     result = 'tails';
+            // }
+
+            // if (guess === result) {
+            //     console.log('you win!');
+            // } else {
+            //     console.log('you lose!');
+            // }
+
+            //Ternary options
+            
+            let result = randomNumber <0.5? 'heads' : 'tails';
+            const outcome = guess === result? 'You win!' : 'You lose!';
+            console.log(outcome);
+        </script>
+    </body>
+</html>
