@@ -77,3 +77,40 @@ function countPositives(array){
 }
 
 console.log(countPositives([1,2,-3]));
+
+//challenge exercise
+function minMax(array){
+    let maxValue = null;
+    let minValue = null;
+    for(let i = 0; i < array.length; i++){
+        if(array[i] > maxValue || maxValue === null){
+            maxValue = array[i];
+        } 
+        if (array[i] < minValue || minValue === null){
+            minValue = array[i];
+        }
+    }
+    return `min : ${minValue}, max : ${maxValue}`;
+}
+
+console.log(minMax([1,2,-3]));
+console.log(minMax([]));
+console.log(minMax([3]));
+
+
+function countWords(words){
+    const result = {};
+    
+    for(let i = 0; i < words.length; i++){
+        const word = words[i];
+
+        if(!result[word]){
+            result[word] = 1;
+        } else {
+            result[word]++;
+        }
+    }
+    return result;
+}
+
+console.log(countWords(['apple', 'grape', 'apple', 'apple']));
